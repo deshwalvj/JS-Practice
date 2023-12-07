@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clouser with chai </title>
+</head>
+<body style="background-color: black;">
+    <button id="orange">Orange</button>
+    <button id="Green">Green</button>
+</body>
+<script>
+    //------------------------------------------------------- this is manually we will make it Automatice;
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`;
+    // }
+
+    // document.getElementById("Green").onclick = function(){
+    //     document.body.style.backgroundColor = `Green`;
+    // }
+
+//------------------------------------------------------- this is Automatically;
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+    
+</script>
+</html>
